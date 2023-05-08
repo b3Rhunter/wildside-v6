@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: monospace;
+}
+
+h1 {
+  display: none;
+}
+
+h2 {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(43, 41, 50);
+  color: #fff;
+  background-image: url('./images/wildSide_bg_desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.logo {
+  max-width: 300px;
+  margin: 24px;
+  align-self: flex-start;
+}
+
+.bookCont {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookBtn {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  max-width: 300px;
+  margin: 24px;
+  padding: 14px 24px;
+  font-size: 1.3em;
+  transition: 0.3s;
+}
+
+.bookBtn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-4px);
+}
+
+.bookBtn:active {
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateY(4px);
+}
+
+.btn-101,
+.btn-101 *,
+.btn-101 :after,
+.btn-101 :before,
+.btn-101:after,
+.btn-101:before {
+  border: 0 solid;
+  box-sizing: border-box;
+  z-index: 999px;
+}
+.btn-101 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+}
+.btn-101:disabled {
+  cursor: default;
+}
+.btn-101:-moz-focusring {
+  outline: auto;
+}
+.btn-101 svg {
+  vertical-align: middle;
+}
+.btn-101 [hidden] {
+  display: none;
+}
+.btn-101 {
+  --thickness: 3px;
+  --roundness: 1.2rem;
+  --color: #ff00dd;
+  --opacity: 0.6;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background: none;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: var(--roundness);
+  color: #fff;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0.8rem 3rem;
+  margin-bottom: 24px;
+  max-width: 300px;
+  -webkit-animation-play-state: running; /* Animation always running */
+  animation-play-state: running; /* Animation always running */
+}
+.btn-101:hover {
+  background: hsla(0, 0%, 100%, 0.3);
+  filter: brightness(1.2);
+}
+.btn-101:active {
+  --opacity: 0;
+  background: hsla(0, 0%, 100%, 0.1);
+}
+.btn-101 svg {
+  border-radius: var(--roundness);
+  display: block;
+  filter: url(#glow);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.btn-101 rect {
+  fill: none;
+  stroke: #ff00ea;
+  stroke-width: var(--thickness);
+  rx: var(--roundness);
+  stroke-linejoin: round;
+  stroke-dasharray: 185%;
+  stroke-dashoffset: 80;
+  -webkit-animation: snake 2s linear infinite;
+  animation: snake 2s linear infinite;
+  -webkit-animation-play-state: running; /* Animation always running */
+  animation-play-state: running; /* Animation always running */
+  height: 100%;
+  opacity: var(--opacity);
+  transition: opacity 0.2s;
+  width: 100%;
+}
+.btn-101:hover rect {
+  -webkit-animation-play-state: paused; /* Animation paused on hover */
+  animation-play-state: paused; /* Animation paused on hover */
+  opacity: var(--opacity);
+}
+@-webkit-keyframes snake {
+  to {
+    stroke-dashoffset: 370%;
+  }
+}
+@keyframes snake {
+  to {
+    stroke-dashoffset: 370%;
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    background-image: url('./images/wildSide_bg_mobile.png');
+  }
+}
