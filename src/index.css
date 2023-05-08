@@ -59,6 +59,15 @@ a {
   padding: 14px 24px;
   font-size: 1.3em;
   transition: 0.3s;
+  -webkit-animation-play-state: running; /* Animation always running */
+  animation-play-state: running; /* Animation always running */
+}
+
+.bookBtn:after,
+.bookBtn:before {
+  border: 0 solid;
+  box-sizing: border-box;
+  z-index: 999px;
 }
 
 .bookBtn:hover {
@@ -85,6 +94,7 @@ a {
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: button;
   -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  transition: 0.3s;
 }
 .btn-101:disabled {
   cursor: default;
@@ -100,7 +110,7 @@ a {
 }
 .btn-101 {
   --thickness: 3px;
-  --roundness: 1.2rem;
+  --roundness: 14px;
   --color: #ff00dd;
   --opacity: 0.6;
   -webkit-backdrop-filter: blur(5px);
@@ -112,22 +122,25 @@ a {
   color: #fff;
   cursor: pointer;
   font-family: monospace;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 500;
   padding: 0.8rem 3rem;
   margin-bottom: 24px;
-  max-width: 300px;
+  position: relative;
   -webkit-animation-play-state: running; /* Animation always running */
   animation-play-state: running; /* Animation always running */
 }
 .btn-101:hover {
   background: hsla(0, 0%, 100%, 0.3);
   filter: brightness(1.2);
+  border: 1px solid #fff;
+  transform: translateY(-4px);
 }
+
 .btn-101:active {
-  --opacity: 0;
-  background: hsla(0, 0%, 100%, 0.1);
+  transform: translateY(4px);
 }
+
 .btn-101 svg {
   border-radius: var(--roundness);
   display: block;
@@ -155,11 +168,7 @@ a {
   transition: opacity 0.2s;
   width: 100%;
 }
-.btn-101:hover rect {
-  -webkit-animation-play-state: paused; /* Animation paused on hover */
-  animation-play-state: paused; /* Animation paused on hover */
-  opacity: var(--opacity);
-}
+
 @-webkit-keyframes snake {
   to {
     stroke-dashoffset: 370%;
